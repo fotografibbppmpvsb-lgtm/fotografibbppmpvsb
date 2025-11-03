@@ -6,6 +6,8 @@
   <title>Fotografi BBPPMVSB</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
+  <!-- Custom CSS for responsive card images -->
+  <link rel="stylesheet" href="css/cards.css">
   <style>
     body {
       box-sizing: border-box;
@@ -59,6 +61,10 @@
       #portfolio .portfolio-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       }
+      /* Ensure portfolio images are centered on small screens (Android) */
+      #portfolio .portfolio-card-media img {
+        object-position: center !important;
+      }
     }
 
     /* Ensure portfolio card images keep their aspect ratio and don't stretch on Android */
@@ -107,132 +113,132 @@
   </section><!-- Portfolio Section -->
   <section id="portfolio" class="py-20 px-4 bg-gray-50">
    <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">HASIL KARYA UPSKILLING DAN RESKILLING FOTOGRAFI GELOMBANG 4</h2>
+    <h2 class="text-2xl font-bold text-center mb-12 text-gray-800">HASIL KARYA UPSKILLING DAN RESKILLING FOTOGRAFI GELOMBANG 4</h2>
   <div class="grid portfolio-grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"><!-- Portfolio Card 1 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-pink-400 to-purple-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-pink-400 to-purple-500">
   <img src="i.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
      <h3 class="text-base font-bold mb-2 text-gray-800">Dian Kurniawan, S.Sn</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Bondowoso</p><a href="https://online.pubhtml5.com/sqnph/kwga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Bondowoso</p><a href="https://online.pubhtml5.com/sqnph/kwga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 1 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
   <img src="22.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
      <h3 class="text-base font-bold mb-2 text-gray-800">Meri Andani, S.Kom</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN IV Koto Aur Malintang</p><a href="https://online.pubhtml5.com/sqnph/esbz/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <p class="text-gray-600 mb-2 text-xs">SMKN IV Koto Aur Malintang</p><a href="https://online.pubhtml5.com/sqnph/esbz/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 2 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
   <img src="33.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
      <h3 class="text-base font-bold mb-2 text-gray-800">Nelvi Zetri, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Sijunjung</p><a href="https://online.pubhtml5.com/sqnph/dipa/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Sijunjung</p><a href="https://online.pubhtml5.com/sqnph/dipa/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 3 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-  <h3 class="text-base font-bold mb-2 text-gray-800">Bambang Tri Mulyono</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 48 Jakarta</p><a href="https://online.pubhtml5.com/sqnph/sdbo/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <h3 class="text-base font-bold mb-2 text-gray-800">Bambang Tri Mulyono, S. T</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 48 Jakarta</p><a href="https://online.pubhtml5.com/sqnph/sdbo/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 4 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Muhamad Firmansyah, S.Kom., C.STMI</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMK Informatika CBI</p><a href="https://online.pubhtml5.com/sqnph/vrly/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Muhamad Firmansyah, S. Kom., C.STMI</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMK Informatika CBI</p><a href="https://online.pubhtml5.com/sqnph/vrly/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 5 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
   <img src="66.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Dini Wulaningtyas</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Gombong</p><a href="https://online.pubhtml5.com/sqnph/tyjn/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Dini Wulaningtyas, S. Kom</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Gombong</p><a href="https://online.pubhtml5.com/sqnph/tyjn/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 6 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <img src="77.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Jajo Sutarjo, S.Pd.</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Jatibarang Kab. Indramayu</p><a href="https://online.pubhtml5.com/sqnph/jivb/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Jajo Sutarjo, S. Pd</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Jatibarang Kab. Indramayu</p><a href="https://online.pubhtml5.com/sqnph/jivb/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 7 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
   <img src="88.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Indra Setia Budi, S. Kom.</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN Padang Cermin</p><a href="https://online.pubhtml5.com/sqnph/emea/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Indra Setia Budi, S. Kom</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN Padang Cermin</p><a href="https://online.pubhtml5.com/sqnph/emea/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 8 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
   <img src="99.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Dian Riklas Bagia, S.Kom.</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Kota Serang</p><a href="#/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Dian Riklas Bagia, S.Kom</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kota Serang</p><a href="https://online.fliphtml5.com/rharta/gooj/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 9 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
      <h3 class="text-base font-bold mb-2 text-gray-800">Jodi Sugiarto, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 1 Kawunganten</p><a href="https://online.pubhtml5.com/sqnph/cxxm/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kawunganten</p><a href="https://online.pubhtml5.com/sqnph/cxxm/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 10 -->
    <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Tri Sudarmanto</h3>
-  <p class="text-gray-600 mb-2 text-sm">International Brand</p><a href="https://online.pubhtml5.com/sqnph/zuga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Tri Sudarmant, S. Kom</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 3 Kediri</p><a href="https://online.pubhtml5.com/sqnph/zuga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 11 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
   <img src="i.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
      <h3 class="text-base font-bold mb-2 text-gray-800">Muh. Irfan Basri, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN 7 Bone</p><a href="#/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 7 Bone</p><a href="https://online.fliphtml5.com/rharta/ekpk/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 12 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">R. Hartanto</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN</p><a href="#/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">R. Hartanto, S.T</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN</p><a href="https://online.fliphtml5.com/rharta/mytu/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 13 -->
    <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Jujuk Irawan</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN</p><a href="#/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Jujuk Irawan, S. Sn</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 3 Batu</p><a href="https://online.fliphtml5.com/rharta/epum/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 14 -->
    <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
@@ -240,8 +246,8 @@
   <img src="7.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
   </div>
     <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Eko Sulistyowarno</h3>
-  <p class="text-gray-600 mb-2 text-sm">SMKN</p><a href="#/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+     <h3 class="text-base font-bold mb-2 text-gray-800">Eko Sulistyowarno, S. Sn</h3>
+  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Ponorogo</p><a href="https://online.pubhtml5.com/sqnph/jpjv/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
     </div>
    </div><!-- Portfolio Card 15 -->
   
