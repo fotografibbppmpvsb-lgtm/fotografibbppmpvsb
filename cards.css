@@ -1,0 +1,71 @@
+/* cards.css - improved helpers to keep portfolio card images centered and responsive on Android and other browsers */
+
+/*
+  Strategy:
+  - Use native aspect-ratio where supported for consistent 4:3 cards.
+  - Provide a padding-top fallback for browsers without aspect-ratio support.
+  - Use object-fit:cover for modern browsers; provide a robust absolute-position fallback when object-fit is unavailable.
+  - Cap the visible height on very small screens to prevent overly tall cards.
+*/
+
+.portfolio-card-media {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  /* prefer native aspect-ratio for modern browsers */
+  aspect-ratio: 4 / 3;
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 1/1) {
+  .portfolio-card-media {
+    height: 0;
+    padding-top: 75%; /* 4:3 -> 3/4 = 75% */
+  }
+}
+
+/* Modern browsers: use object-fit to cover the container */
+.portfolio-card-media img {
+  position: absolute;
+  inset: 0; /* fill the container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Fallback for browsers that do NOT support object-fit (older Android WebViews, some browsers) */
+@supports not (object-fit: cover) {
+  .portfolio-card-media img {
+    /* Center & cover fallback using min-width/min-height and transform */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: none;
+  }
+}
+
+/* On very small screens, cap the card height so the grid stays compact */
+@media (max-width: 420px) {
+  .portfolio-card-media {
+    max-height: 180px; /* keeps card compact on very small phones */
+  }
+}
+
+/* Ensure rendering mode is normal for common image types */
+.portfolio-card-media img[src$=".jpg"],
+.portfolio-card-media img[src$=".webp"] {
+  image-rendering: auto;
+}
+
+/* Extra: make sure inline object-position set by scripts doesn't break centering
+   (our CSS + !important would normally win, but we avoid !important here so fallbacks remain testable). */
+/* end of cards.css */
