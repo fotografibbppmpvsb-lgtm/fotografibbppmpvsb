@@ -7,12 +7,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <!-- Custom CSS for responsive card images -->
-  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="css/cards.css">
   <style>
-    body {
-      box-sizing: border-box;
-    }
-
+    /* Use universal box-sizing so components size predictably */
     * {
       box-sizing: border-box;
     }
@@ -91,19 +88,19 @@
   <section id="home" class="hero-gradient text-white py-0 px-0">
   <div class="w-full h-[40vh] md:h-screen relative"><!-- Carousel Container -->
     <div id="carousel-container" class="w-full h-full relative overflow-hidden"><!-- Image 1 -->
-  <div class="carousel-slide absolute inset-0 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center transition-opacity duration-500 opacity-100">
+  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-100">
   <img src="1.jpg" alt="Slide 1" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div><!-- Image 2 -->
-  <div class="carousel-slide absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center transition-opacity duration-500 opacity-0">
+  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
   <img src="2.jpg" alt="Slide 2" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div><!-- Image 3 -->
-  <div class="carousel-slide absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center transition-opacity duration-500 opacity-0">
+  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
   <img src="3.jpg" alt="Slide 3" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div><!-- Image 4 -->
-  <div class="carousel-slide absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center transition-opacity duration-500 opacity-0">
+  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
   <img src="4.jpg" alt="Slide 4" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div><!-- Image 5 -->
-  <div class="carousel-slide absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center transition-opacity duration-500 opacity-0">
+  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
   <img src="5.jpg" alt="Slide 5" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div>
     </div><!-- Navigation Dots -->
@@ -603,6 +600,5 @@
 
 
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99787f50569dfe03',t:'MTc2MTk2OTc1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
-
