@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotografi BBPPMVSB</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
   <!-- Custom CSS for responsive card images -->
   <link rel="stylesheet" href="css/cards.css">
   <style>
@@ -82,7 +81,7 @@
 
   </style>
   <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  
  </head>
  <body class="min-h-full"><!-- Hero Section -->
   <section id="home" class="hero-gradient text-white py-0 px-0">
@@ -122,8 +121,8 @@
     <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="6" aria-label="Slide 7"></button>
   </div>
   </div><!-- Navigation Arrows -->
-  <button id="prev-btn" aria-label="Previous slide" class="absolute left-2 md:left-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white bg-opacity-80 hover:bg-opacity-90 rounded-full flex items-center justify-center text-gray-800 text-2xl transition-all duration-300 shadow-lg"> ‹ </button>
-  <button id="next-btn" aria-label="Next slide" class="absolute right-2 md:right-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white bg-opacity-80 hover:bg-opacity-90 rounded-full flex items-center justify-center text-gray-800 text-2xl transition-all duration-300 shadow-lg"> › </button>
+  <button id="prev-btn" aria-label="Previous slide" class="absolute left-2 md:left-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300"> ‹ </button>
+  <button id="next-btn" aria-label="Next slide" class="absolute right-2 md:right-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300"> › </button>
    </div>
   </section><!-- Portfolio Section -->
   <section id="portfolio" class="py-4 sm:py-6 px-4 bg-gray-50">
@@ -276,194 +275,6 @@
    </div>
   </footer>
   <script>
-    const defaultConfig = {
-      background_color: "#667eea",
-      surface_color: "#ffffff",
-      text_color: "#1f2937",
-      primary_action_color: "#667eea",
-      secondary_action_color: "#764ba2",
-      font_family: "system-ui",
-      font_size: 16,
-      model_name: "SOPHIA ANDERSON",
-      tagline: "Professional Fashion Model & Influencer",
-      about_title: "About Me",
-      about_text: "With over 8 years of experience in the fashion industry, I've had the privilege of working with renowned brands and designers worldwide. My passion for fashion and dedication to my craft have led me to grace the covers of major fashion magazines and walk the runways of Paris, Milan, and New York Fashion Weeks.",
-      contact_title: "Get In Touch",
-      email_label: "Email",
-      phone_label: "Phone"
-    };
-
-    async function onConfigChange(config) {
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-      const fontFamily = config.font_family || defaultConfig.font_family;
-      const fontSize = config.font_size || defaultConfig.font_size;
-      const baseFontStack = 'system-ui, -apple-system, sans-serif';
-
-      // Apply colors
-      const heroSection = document.querySelector('.hero-gradient');
-      if (heroSection) {
-        heroSection.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryActionColor} 100%)`;
-      }
-
-
-      
-      const cards = document.querySelectorAll('.card-hover');
-      cards.forEach(card => {
-        card.style.backgroundColor = surfaceColor;
-      });
-
-
-
-
-
-      // Apply fonts
-      document.body.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
-
-      // Apply font sizes
-      const heroName = document.getElementById('hero-name');
-      if (heroName) heroName.style.fontSize = `${fontSize * 3.5}px`;
-
-      const heroTagline = document.getElementById('hero-tagline');
-      if (heroTagline) heroTagline.style.fontSize = `${fontSize * 1.5}px`;
-
-      const sectionTitles = document.querySelectorAll('h2');
-      sectionTitles.forEach(title => {
-        title.style.fontSize = `${fontSize * 2.5}px`;
-      });
-
-      const cardTitles = document.querySelectorAll('.card-hover h3');
-      cardTitles.forEach(title => {
-        title.style.fontSize = `${fontSize * 1.25}px`;
-      });
-
-      const bodyText = document.querySelectorAll('p, a, label, input, textarea, button');
-      bodyText.forEach(el => {
-        el.style.fontSize = `${fontSize}px`;
-      });
-
-      // Apply text content
-
-      const heroNameEl = document.getElementById('hero-name');
-      if (heroNameEl) heroNameEl.textContent = config.model_name || defaultConfig.model_name;
-
-      const heroTaglineEl = document.getElementById('hero-tagline');
-      if (heroTaglineEl) heroTaglineEl.textContent = config.tagline || defaultConfig.tagline;
-
-      const aboutTitle = document.getElementById('about-title');
-      if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
-
-      const aboutDescription = document.getElementById('about-description');
-      if (aboutDescription) aboutDescription.textContent = config.about_text || defaultConfig.about_text;
-
-      const contactTitle = document.getElementById('contact-title');
-      if (contactTitle) contactTitle.textContent = config.contact_title || defaultConfig.contact_title;
-
-      const emailLabel = document.getElementById('email-label');
-      if (emailLabel) emailLabel.textContent = config.email_label || defaultConfig.email_label;
-
-      const phoneLabel = document.getElementById('phone-label');
-      if (phoneLabel) phoneLabel.textContent = config.phone_label || defaultConfig.phone_label;
-    }
-
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              config.surface_color = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ surface_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-            set: (value) => {
-              config.primary_action_color = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ primary_action_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-            set: (value) => {
-              config.secondary_action_color = value;
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ secondary_action_color: value });
-              }
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            if (window.elementSdk) {
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            if (window.elementSdk) {
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["model_name", config.model_name || defaultConfig.model_name],
-        ["tagline", config.tagline || defaultConfig.tagline],
-        ["about_title", config.about_title || defaultConfig.about_title],
-        ["about_text", config.about_text || defaultConfig.about_text],
-        ["contact_title", config.contact_title || defaultConfig.contact_title],
-        ["email_label", config.email_label || defaultConfig.email_label],
-        ["phone_label", config.phone_label || defaultConfig.phone_label]
-      ]);
-    }
-
-    // Initialize SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-
-
-
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -630,28 +441,9 @@
         });
       }
     })();
-
-    // Portfolio button handling
-    const portfolioButtons = document.querySelectorAll('.card-hover button');
-    portfolioButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        const cardTitles = ['Fashion Editorial', 'Runway Show', 'Beauty Campaign', 'Commercial Shoot', 'Magazine Cover', 'Designer Collection'];
-        const message = `Menampilkan detail untuk ${cardTitles[index]}. Terima kasih atas minat Anda!`;
-        
-        // Create temporary message
-        const tempMessage = document.createElement('div');
-        tempMessage.className = 'fixed top-4 right-4 bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-        tempMessage.textContent = message;
-        document.body.appendChild(tempMessage);
-        
-        // Remove message after 3 seconds
-        setTimeout(() => {
-          document.body.removeChild(tempMessage);
-        }, 3000);
-      });
-    });
-
-
+    // Portfolio buttons were previously handled here but actual portfolio items use links
+    // rather than buttons in the markup; that handler added JS that wasn't being invoked
+    // on this page. Removing the unused handler reduces JS payload and improves parse time.
   </script>
 </body>
 </html>
