@@ -112,20 +112,23 @@
   <img src="7.jpg" alt="Slide 7" class="w-full h-full object-contain md:object-cover" loading="lazy" />
   </div>
     </div><!-- Navigation Dots -->
- <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-100 transition-opacity duration-300 shadow-lg" data-slide="0"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="1"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="2"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="3"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="4"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="5"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="6"></button>
+  <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-100 transition-opacity duration-300 shadow-lg" data-slide="0" aria-label="Slide 1"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="1" aria-label="Slide 2"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="2" aria-label="Slide 3"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="3" aria-label="Slide 4"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="4" aria-label="Slide 5"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="5" aria-label="Slide 6"></button>
+    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="6" aria-label="Slide 7"></button>
   </div>
-  </div><!-- Navigation Arrows --> <button id="prev-btn" class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 w-10 md:w-12 h-10 md:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300 shadow-lg"> ‹ </button> <button id="next-btn" class="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 w-10 md:w-12 h-10 md:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300 shadow-lg"> › </button>
+  </div><!-- Navigation Arrows -->
+  <button id="prev-btn" aria-label="Previous slide" class="absolute left-2 md:left-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white bg-opacity-80 hover:bg-opacity-90 rounded-full flex items-center justify-center text-gray-800 text-2xl transition-all duration-300 shadow-lg"> ‹ </button>
+  <button id="next-btn" aria-label="Next slide" class="absolute right-2 md:right-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white bg-opacity-80 hover:bg-opacity-90 rounded-full flex items-center justify-center text-gray-800 text-2xl transition-all duration-300 shadow-lg"> › </button>
    </div>
   </section><!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 px-4 bg-gray-50">
+  <section id="portfolio" class="py-4 sm:py-6 px-4 bg-gray-50">
    <div class="max-w-7xl mx-auto">
+  <img src="logo.png" alt="Fotografi BBPPMVSB Logo" class="mx-auto w-52 sm:w-56 md:w-64 lg:w-72 h-auto mb-2" loading="lazy">
     <h2 class="text-2xl font-bold text-center mb-12 text-gray-800">HASIL KARYA UPSKILLING DAN RESKILLING FOTOGRAFI GELOMBANG 4</h2>
   <div class="grid portfolio-grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"><!-- Portfolio Card 1 -->
   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
@@ -497,6 +500,8 @@
       });
       
       currentSlide = index;
+      // reposition controls to align with visible image center
+      positionCarouselControls();
     }
 
     function nextSlide() {
@@ -522,6 +527,38 @@
 
     // Auto-play carousel
     setInterval(nextSlide, 4000);
+
+    // Position prev/next buttons to align with visible image center
+    function positionCarouselControls(){
+      try{
+        const container = document.getElementById('carousel-container');
+        const prev = document.getElementById('prev-btn');
+        const next = document.getElementById('next-btn');
+        if(!container || !prev || !next) return;
+
+        // find currently visible slide image; prefer currentSlide index
+        const visibleSlide = slides[currentSlide] || Array.from(slides).find(s => parseFloat(getComputedStyle(s).opacity) > 0);
+        if(!visibleSlide) return;
+        const img = visibleSlide.querySelector('img');
+        if(!img) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const imgRect = img.getBoundingClientRect();
+
+        // center y relative to the container
+        const centerY = imgRect.top + imgRect.height/2 - containerRect.top;
+
+        // clamp so buttons stay inside container
+        const clampedY = Math.max(20, Math.min(centerY, containerRect.height - 20));
+
+        prev.style.top = `calc(${clampedY}px)`;
+        next.style.top = `calc(${clampedY}px)`;
+      }catch(e){/* ignore positioning errors */}
+    }
+
+    // reposition on load and resize
+    window.addEventListener('resize', positionCarouselControls);
+    window.addEventListener('load', positionCarouselControls);
 
     // --- Draggable focal-point for carousel images ---
     // Allows user to drag images to adjust object-position so faces aren't cropped.
@@ -618,11 +655,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
