@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="id">
- <head>
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotografi BBPPMVSB</title>
@@ -29,7 +30,8 @@
     /* draggable focal point helpers for carousel images */
     .carousel-slide img {
       cursor: grab;
-      touch-action: none; /* for pointer events */
+      touch-action: none;
+      /* for pointer events */
     }
 
     .carousel-slide img.dragging {
@@ -40,8 +42,11 @@
 
     /* Responsive fallback: make carousel images shrink on small screens (Android) */
     @media (max-width: 480px) {
+
       /* Ensure carousel container is not too tall on small devices */
-      #carousel-container { height: 40vh; }
+      #carousel-container {
+        height: 40vh;
+      }
 
       /* Make carousel images fit inside the container rather than cover (so they visually shrink)
          Use !important to override inline styles or Tailwind if CDN is unavailable. */
@@ -57,6 +62,7 @@
       #portfolio .portfolio-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       }
+
       /* Ensure portfolio images are centered on small screens (Android) */
       #portfolio .portfolio-card-media img {
         object-position: center !important;
@@ -68,211 +74,289 @@
       aspect-ratio: 4 / 3;
       overflow: hidden;
       display: block;
-      height: auto; /* prefer aspect-ratio when supported */
+      height: auto;
+      /* prefer aspect-ratio when supported */
     }
 
     .portfolio-card-media img {
       width: 100%;
       height: 100%;
-      object-fit: cover !important; /* prevent stretching or becoming contain */
+      object-fit: cover !important;
+      /* prevent stretching or becoming contain */
       object-position: center center;
       display: block;
     }
-
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  
- </head>
- <body class="min-h-full"><!-- Hero Section -->
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</head>
+
+<body class="min-h-full">
+  <!-- Hero Section -->
   <section id="home" class="hero-gradient text-white py-0 px-0">
-  <div class="w-full h-[40vh] md:h-screen relative"><!-- Carousel Container -->
-    <div id="carousel-container" class="w-full h-full relative overflow-hidden"><!-- Image 1 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-100">
-  <img src="1.jpg" alt="Slide 1" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div><!-- Image 2 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="2.jpg" alt="Slide 2" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div><!-- Image 3 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="3.jpg" alt="Slide 3" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div><!-- Image 4 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="4.jpg" alt="Slide 4" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div><!-- Image 5 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="5.jpg" alt="Slide 5" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div>
-  <!-- Image 6 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="6.jpg" alt="Slide 6" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div>
-  <!-- Image 7 -->
-  <div class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
-  <img src="7.jpg" alt="Slide 7" class="w-full h-full object-contain md:object-cover" loading="lazy" />
-  </div>
-    </div><!-- Navigation Dots -->
-  <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-100 transition-opacity duration-300 shadow-lg" data-slide="0" aria-label="Slide 1"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="1" aria-label="Slide 2"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="2" aria-label="Slide 3"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="3" aria-label="Slide 4"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="4" aria-label="Slide 5"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="5" aria-label="Slide 6"></button>
-    <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg" data-slide="6" aria-label="Slide 7"></button>
-  </div>
-  </div><!-- Navigation Arrows -->
-  <button id="prev-btn" aria-label="Previous slide" class="absolute left-2 md:left-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300"> ‹ </button>
-  <button id="next-btn" aria-label="Next slide" class="absolute right-2 md:right-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300"> › </button>
-   </div>
+    <div class="w-full h-[40vh] md:h-screen relative">
+      <!-- Carousel Container -->
+      <div id="carousel-container" class="w-full h-full relative overflow-hidden">
+        <!-- Image 1 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-100">
+          <img src="1.jpg" alt="Slide 1" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div><!-- Image 2 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="2.jpg" alt="Slide 2" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div><!-- Image 3 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="3.jpg" alt="Slide 3" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div><!-- Image 4 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="4.jpg" alt="Slide 4" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div><!-- Image 5 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="5.jpg" alt="Slide 5" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div>
+        <!-- Image 6 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="6.jpg" alt="Slide 6" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div>
+        <!-- Image 7 -->
+        <div
+          class="carousel-slide absolute inset-0 bg-white flex items-center justify-center transition-opacity duration-500 opacity-0">
+          <img src="7.jpg" alt="Slide 7" class="w-full h-full object-contain md:object-cover" loading="lazy" />
+        </div>
+      </div><!-- Navigation Dots -->
+      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-100 transition-opacity duration-300 shadow-lg"
+          data-slide="0" aria-label="Slide 1"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="1" aria-label="Slide 2"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="2" aria-label="Slide 3"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="3" aria-label="Slide 4"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="4" aria-label="Slide 5"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="5" aria-label="Slide 6"></button>
+        <button class="carousel-dot w-4 h-4 rounded-full bg-white opacity-50 transition-opacity duration-300 shadow-lg"
+          data-slide="6" aria-label="Slide 7"></button>
+      </div>
+    </div><!-- Navigation Arrows -->
+    <button id="prev-btn" aria-label="Previous slide"
+      class="absolute left-2 md:left-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300">
+      ‹ </button>
+    <button id="next-btn" aria-label="Next slide"
+      class="absolute right-2 md:right-8 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-transparent hover:bg-white hover:bg-opacity-25 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300">
+      › </button>
+    </div>
   </section><!-- Portfolio Section -->
   <section id="portfolio" class="py-4 sm:py-6 px-4 bg-gray-50">
-   <div class="max-w-7xl mx-auto">
-  <img src="logo.png" alt="Fotografi BBPPMVSB Logo" class="mx-auto w-52 sm:w-56 md:w-64 lg:w-72 h-auto mb-2" loading="lazy">
-    <h2 class="text-2xl font-bold text-center mb-12 text-gray-800">HASIL KARYA UPSKILLING DAN RESKILLING FOTOGRAFI GELOMBANG 4</h2>
-  <div class="grid portfolio-grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"><!-- Portfolio Card 1 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-pink-400 to-purple-500">
-  <img src="11.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Dian Kurniawan, S.Sn</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Bondowoso</p><a href="https://online.pubhtml5.com/sqnph/kwga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
+    <div class="max-w-7xl mx-auto">
+      <img src="logo.png" alt="Fotografi BBPPMVSB Logo" class="mx-auto w-52 sm:w-56 md:w-64 lg:w-72 h-auto mb-1"
+        loading="lazy">
+      <div class="text-center">
+        <span id="tanggalwaktu" class="block text-sm text-gray-600 mb-1" aria-hidden="true"></span>
+      </div>
+      <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">HASIL KARYA UPSKILLING DAN RESKILLING FOTOGRAFI
+        GELOMBANG 4</h2>
+      <div class="grid portfolio-grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+        <!-- Portfolio Card 1 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-pink-400 to-purple-500">
+            <img src="11.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Dian Kurniawan, S.Sn</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Bondowoso</p><a href="https://online.pubhtml5.com/sqnph/kwga/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 1 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+            <img src="22.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Meri Andani, S.Kom</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN IV Koto Aur Malintang</p><a
+              href="https://online.pubhtml5.com/sqnph/esbz/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 2 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+            <img src="33.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Nelvi Zetri, S. Pd</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Sijunjung</p><a href="https://online.pubhtml5.com/sqnph/dipa/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 3 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="44.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Bambang Tri Mulyono, S. T</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 48 Jakarta</p><a href="https://online.pubhtml5.com/sqnph/sdbo/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 4 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+            <img src="55.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Muhamad Firmansyah, S. Kom., C.STMI</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMK Informatika CBI</p><a
+              href="https://online.pubhtml5.com/sqnph/vrly/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 5 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+            <img src="66.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Dini Wulaningtyas, S. Kom</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Gombong Kebumen</p><a
+              href="https://online.pubhtml5.com/sqnph/tyjn/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 6 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="77.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Jajo Sutarjo, S. Pd</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Jatibarang Kab. Indramayu</p><a
+              href="https://online.pubhtml5.com/sqnph/jivb/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 7 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
+            <img src="88.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Indra Setia Budi, S. Kom</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN Padang Cermin</p><a
+              href="https://online.pubhtml5.com/sqnph/emea/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 8 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+            <img src="99.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Dian Riklas Bagia, S.Kom</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kota Serang</p><a
+              href="https://online.pubhtml5.com/sqnph/hzeu/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 9 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="110.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Jodi Sugiarto, S. Pd</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kawunganten</p><a
+              href="https://online.pubhtml5.com/sqnph/cxxm/" target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 10 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="111.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Tri Sudarmant, S. Kom</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 3 Kediri</p><a href="https://online.pubhtml5.com/sqnph/zuga/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 11 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
+            <img src="i.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Muh. Irfan Basri, S. Pd</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 7 Bone</p><a href="https://online.pubhtml5.com/sqnph/colo/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 12 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="113.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">R. Hartanto, S.T</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMK IPIEMS</p><a href="https://online.pubhtml5.com/sqnph/xidy/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 13 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="114.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Jujuk Irawan, S. Sn</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 3 Batu</p><a href="https://online.pubhtml5.com/sqnph/kinz/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 14 -->
+        <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
+          <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
+            <img src="155.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-gray-800">Eko Sulistyowarno, S. Sn</h3>
+            <p class="text-gray-600 mb-2 text-xs">SMKN 1 Ponorogo</p><a href="https://online.pubhtml5.com/sqnph/jpjv/"
+              target="_blank" rel="noopener noreferrer"
+              class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View
+              Details</a>
+          </div>
+        </div><!-- Portfolio Card 15 -->
+
+      </div>
     </div>
-   </div><!-- Portfolio Card 1 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
-  <img src="22.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Meri Andani, S.Kom</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN IV Koto Aur Malintang</p><a href="https://online.pubhtml5.com/sqnph/esbz/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 2 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
-  <img src="33.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Nelvi Zetri, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Sijunjung</p><a href="https://online.pubhtml5.com/sqnph/dipa/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 3 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="44.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-  <h3 class="text-base font-bold mb-2 text-gray-800">Bambang Tri Mulyono, S. T</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 48 Jakarta</p><a href="https://online.pubhtml5.com/sqnph/sdbo/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 4 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
-  <img src="55.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Muhamad Firmansyah, S. Kom., C.STMI</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMK Informatika CBI</p><a href="https://online.pubhtml5.com/sqnph/vrly/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 5 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
-  <img src="66.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Dini Wulaningtyas, S. Kom</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Gombong Kebumen</p><a href="https://online.pubhtml5.com/sqnph/tyjn/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 6 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="77.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Jajo Sutarjo, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Jatibarang Kab. Indramayu</p><a href="https://online.pubhtml5.com/sqnph/jivb/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 7 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-blue-400 to-indigo-500">
-  <img src="88.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Indra Setia Budi, S. Kom</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN Padang Cermin</p><a href="https://online.pubhtml5.com/sqnph/emea/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 8 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
-  <img src="99.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Dian Riklas Bagia, S.Kom</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kota Serang</p><a href="https://online.pubhtml5.com/sqnph/hzeu/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 9 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="110.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Jodi Sugiarto, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Kawunganten</p><a href="https://online.pubhtml5.com/sqnph/cxxm/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 10 -->
-   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="111.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Tri Sudarmant, S. Kom</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 3 Kediri</p><a href="https://online.pubhtml5.com/sqnph/zuga/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 11 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-yellow-400 to-orange-500">
-  <img src="i.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Muh. Irfan Basri, S. Pd</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 7 Bone</p><a href="https://online.pubhtml5.com/sqnph/colo/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 12 -->
-  <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="113.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">R. Hartanto, S.T</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMK IPIEMS</p><a href="https://online.pubhtml5.com/sqnph/xidy/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 13 -->
-   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-36 sm:h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="114.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Jujuk Irawan, S. Sn</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 3 Batu</p><a href="https://online.pubhtml5.com/sqnph/kinz/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 14 -->
-   <div class="card-hover bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl">
-  <div class="h-44 portfolio-card-media bg-gradient-to-br from-green-400 to-teal-500">
-  <img src="155.jpg" alt="Portfolio" class="w-full h-full object-cover" loading="lazy" />
-  </div>
-    <div class="p-4">
-     <h3 class="text-base font-bold mb-2 text-gray-800">Eko Sulistyowarno, S. Sn</h3>
-  <p class="text-gray-600 mb-2 text-xs">SMKN 1 Ponorogo</p><a href="https://online.pubhtml5.com/sqnph/jpjv/" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center bg-purple-600 text-white py-1.5 px-3 text-sm rounded-md hover:bg-purple-700 transition duration-300">View Details</a>
-    </div>
-   </div><!-- Portfolio Card 15 -->
-  
-    </div>
-   </div>
   </section><!-- Footer -->
   <footer class="bg-gray-800 text-white py-8 px-4">
-   <div class="max-w-7xl mx-auto text-center">
-    <p class="text-gray-400">©developer helpdesk94 2025</p>
-   </div>
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-gray-400">©developer helpdesk94 2025</p>
+    </div>
   </footer>
   <script>
     // Smooth scrolling
@@ -301,15 +385,15 @@
       slides.forEach(slide => {
         slide.style.opacity = '0';
       });
-      
+
       // Show current slide
       slides[index].style.opacity = '1';
-      
+
       // Update dots
       dots.forEach((dot, i) => {
         dot.style.opacity = i === index ? '1' : '0.5';
       });
-      
+
       currentSlide = index;
       // reposition controls to align with visible image center
       positionCarouselControls();
@@ -340,31 +424,33 @@
     setInterval(nextSlide, 4000);
 
     // Position prev/next buttons to align with visible image center
-    function positionCarouselControls(){
-      try{
+    function positionCarouselControls() {
+      try {
         const container = document.getElementById('carousel-container');
         const prev = document.getElementById('prev-btn');
         const next = document.getElementById('next-btn');
-        if(!container || !prev || !next) return;
+        if (!container || !prev || !next) return;
 
         // find currently visible slide image; prefer currentSlide index
-        const visibleSlide = slides[currentSlide] || Array.from(slides).find(s => parseFloat(getComputedStyle(s).opacity) > 0);
-        if(!visibleSlide) return;
+        const visibleSlide = slides[currentSlide] || Array.from(slides).find(s => parseFloat(getComputedStyle(s)
+          .opacity) > 0);
+        if (!visibleSlide) return;
         const img = visibleSlide.querySelector('img');
-        if(!img) return;
+        if (!img) return;
 
         const containerRect = container.getBoundingClientRect();
         const imgRect = img.getBoundingClientRect();
 
         // center y relative to the container
-        const centerY = imgRect.top + imgRect.height/2 - containerRect.top;
+        const centerY = imgRect.top + imgRect.height / 2 - containerRect.top;
 
         // clamp so buttons stay inside container
         const clampedY = Math.max(20, Math.min(centerY, containerRect.height - 20));
 
         prev.style.top = `calc(${clampedY}px)`;
         next.style.top = `calc(${clampedY}px)`;
-      }catch(e){/* ignore positioning errors */}
+      } catch (e) {
+        /* ignore positioning errors */ }
     }
 
     // reposition on load and resize
@@ -373,49 +459,64 @@
 
     // --- Draggable focal-point for carousel images ---
     // Allows user to drag images to adjust object-position so faces aren't cropped.
-    (function(){
-      function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+    (function () {
+      function clamp(v, a, b) {
+        return Math.max(a, Math.min(b, v));
+      }
 
       const container = document.getElementById('carousel-container');
-      if(container){
-  // hint element removed (no on-screen instruction)
+      if (container) {
+        // hint element removed (no on-screen instruction)
 
         const imgs = container.querySelectorAll('.carousel-slide img');
         imgs.forEach(img => {
           // ensure cover mode
           img.style.objectFit = 'cover';
           // load saved position (keyed by file name)
-          try{
+          try {
             const key = 'carousel-pos-' + (new URL(img.src, window.location.href)).pathname;
             const saved = localStorage.getItem(key);
-            if(saved) img.style.objectPosition = saved;
-          }catch(e){/* ignore URL errors */}
+            if (saved) img.style.objectPosition = saved;
+          } catch (e) {
+            /* ignore URL errors */ }
 
           let dragging = false;
-          let startX = 0, startY = 0;
-          let startPos = {x:50, y:50};
+          let startX = 0,
+            startY = 0;
+          let startPos = {
+            x: 50,
+            y: 50
+          };
 
-          function parsePos(pos){
-            if(!pos) return {x:50,y:50};
+          function parsePos(pos) {
+            if (!pos) return {
+              x: 50,
+              y: 50
+            };
             const parts = pos.split(' ');
             const px = parseFloat(parts[0]);
             const py = parseFloat(parts[1]);
-            return {x: isNaN(px)?50:px, y: isNaN(py)?50:py};
+            return {
+              x: isNaN(px) ? 50 : px,
+              y: isNaN(py) ? 50 : py
+            };
           }
 
           img.addEventListener('pointerdown', e => {
             img.setPointerCapture(e.pointerId);
             dragging = true;
             img.classList.add('dragging');
-            startX = e.clientX; startY = e.clientY;
+            startX = e.clientX;
+            startY = e.clientY;
             startPos = parsePos(img.style.objectPosition || getComputedStyle(img).objectPosition);
             e.preventDefault();
           });
 
           img.addEventListener('pointermove', e => {
-            if(!dragging) return;
+            if (!dragging) return;
             const rect = img.getBoundingClientRect();
-            const dx = e.clientX - startX; const dy = e.clientY - startY;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
             const deltaXPercent = dx / rect.width * 100;
             const deltaYPercent = dy / rect.height * 100;
             const nx = clamp(startPos.x + deltaXPercent, 0, 100);
@@ -424,19 +525,21 @@
           });
 
           img.addEventListener('pointerup', e => {
-            if(dragging){
+            if (dragging) {
               dragging = false;
               img.releasePointerCapture(e.pointerId);
               img.classList.remove('dragging');
-              try{
+              try {
                 const key = 'carousel-pos-' + (new URL(img.src, window.location.href)).pathname;
                 localStorage.setItem(key, img.style.objectPosition || getComputedStyle(img).objectPosition);
-              }catch(err){/* ignore */}
+              } catch (err) {
+                /* ignore */ }
             }
           });
 
           img.addEventListener('pointercancel', () => {
-            dragging = false; img.classList.remove('dragging');
+            dragging = false;
+            img.classList.remove('dragging');
           });
         });
       }
@@ -445,5 +548,21 @@
     // rather than buttons in the markup; that handler added JS that wasn't being invoked
     // on this page. Removing the unused handler reduces JS payload and improves parse time.
   </script>
+  <script>
+    var tw = new Date();
+    if (tw.getTimezoneOffset() == 0)(a = tw.getTime() + (7 * 60 * 60 * 1000))
+    else(a = tw.getTime());
+    tw.setTime(a);
+    var tahun = tw.getFullYear();
+    var hari = tw.getDay();
+    var bulan = tw.getMonth();
+    var tanggal = tw.getDate();
+    var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
+    var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",
+      "Oktober", "Nopember", "Desember");
+    document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] +
+      " " + tahun;
+  </script>
 </body>
+
 </html>
